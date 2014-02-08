@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "Evan's New Tab",
+  "description": "Replaces the new tab page with a page with cool pictures and the weather.",
+  "version": "1.0",
+
+  "permissions": [
+   "http://www.reddit.com/r/EarthPorn"
+  ],
+  
+  "chrome_url_overrides" : {
+    "newtab": "evantab.html"
+  }
+}
