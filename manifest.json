@@ -4,17 +4,17 @@
   "name": "chromeElite",
   "description": "Replaces the new tab page with a page with cool pictures and the weather.",
   "version": "1.0",
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
 
   "permissions": [
-   "http://www.reddit.com/r/EarthPorn",
-   "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
-   "style.css",
-   "test.jpg"
+   "http://www.reddit.com/r/EarthPorn"
+   
 
   ],
   
   "chrome_url_overrides" : {
     "newtab": "chromeElite.html"
   }
+  
 }
 

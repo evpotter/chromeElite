@@ -5,7 +5,10 @@
 <head>
     <title>Elitist</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="unslider.min.js"></script>
+        <script src="sports.js"></script>
+  
     <!-- Google fonts -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
@@ -22,8 +25,11 @@
       </div>
     </div>
     <div id="afternoonCnt" class="cnt">
-      <div id="sportsWidget" class="cnt-item">
-      </div>
+      <div class='parent-s cnt-item'>
+   		<div class="container-s" id="sport-container" >
+   			<ul id="sports"></ul>
+  		</div> 
+	  </div>
       <div id="weatherWidget" class="cnt-item">
       </div>
       <div id="emailWidget" class="cnt-item">
