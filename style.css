@@ -16,8 +16,11 @@ body {
   width:100%;
 }
 .cnt {
-  height:100%;
+  height:400px;
   padding:20px;
+}
+iframe {
+  height: 400px;
 }
 .cnt-item {
   border:1px solid pink;
