@@ -30,11 +30,14 @@ body {
   height:100vh;
 }
 .cnt {
-  height:100%;
+  height:400px;
   padding:20px;
   position:relative;
   margin-left:auto;
   margin-right:auto;
+}
+iframe {
+  height: 400px;
 }
 .cnt-item {
   float:left;
