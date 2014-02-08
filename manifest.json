@@ -38,5 +38,6 @@
   "chrome_url_overrides" : {
     "newtab": "chromeElite.html"
   }
+  
 }
 

@@ -94,4 +94,14 @@ iframe {
   font-size:1.3em;
   opacity:0.8;
 }
+#sports > li{
+list-style:none;
+height:320;
+width:620;
 }
+
+.parent-s{width:500px;}
+.container-s { position: relative; overflow: auto; width:100%; }
+.container-s li { list-style: none;  width:100%}
+.container-s ul li { float: left; }
+.container-s ul li p {align:left; color:white;}
