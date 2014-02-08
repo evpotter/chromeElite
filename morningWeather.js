@@ -81,12 +81,15 @@ var morningWeather = {
 		});
 		console.log(typeof(temps[0]));
 		$('#weatherWidget').highcharts({
+			chart: {
+				type: 'area'
+			},
             title: {
-                text: 'Monthly Average Temperature',
+                text: 'Hourly Temperatures for Day',
                 x: -20 //center
             },
             subtitle: {
-                text: 'Source: WorldClimate.com',
+                text: 'Source: Wunderground.com',
                 x: -20
             },
             xAxis: {
