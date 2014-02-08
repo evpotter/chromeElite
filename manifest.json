@@ -6,11 +6,8 @@
   "version": "1.0",
 
   "permissions": [
-   "http://www.reddit.com/r/EarthPorn",
-   "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
-   "style.css",
-   "test.jpg"
-
+   "http://www.reddit.com/r/pics",
+   "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
   ],
   
   "chrome_url_overrides" : {
