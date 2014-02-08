@@ -1,3 +1,7 @@
+html, body {
+  margin: 0px;
+}
+
 body {
   background-color:black;
   height:100%;
@@ -11,7 +15,7 @@ body {
   height:100vh;
   width:100%;
 }
-#cnt {
+.cnt {
   height:100%;
   padding:20px;
 }
