@@ -18,10 +18,23 @@ body {
 .cnt {
   height:100%;
   padding:20px;
+  display: none;
 }
 .cnt-item {
   border:1px solid pink;
+  color: white;
   float:left;
   margin-right:20px;
   padding:20px;
+}
+
+
+.todoSpan {
+  width: 100%;
+}
+.todoSpan i {
+  float: right;
+}
+.done-true {
+  display: none;
 }

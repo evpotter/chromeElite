@@ -6,13 +6,22 @@
   "version": "1.0",
 
   "permissions": [
-   "http://www.reddit.com/r/EarthPorn",
-   "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
-   "style.css",
-   "test.jpg"
-
+    "https://docs.google.com/feeds/",
+    "https://docs.googleusercontent.com/",
+    "https://spreadsheets.google.com/feeds/",
+    "https://ssl.gstatic.com/",
+    "http://www.reddit.com/r/EarthPorn",
+    "https://ajax.googleapis.com/*",
+    "https://www.googleapis.com/*",
+    "https://cdn.firebase.com/",
+    "style.css",
+    "todo.js",
+    "bootstrap.css",
+    "bootstrap.js",
+    "test.jpg"
   ],
-  
+  "content_security_policy": "script-src 'self' https://cdn.firebase.com https://*.firebaseio.com https://ajax.googleapis.com/; object-src 'self'",
+
   "chrome_url_overrides" : {
     "newtab": "chromeElite.html"
   }

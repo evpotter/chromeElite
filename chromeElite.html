@@ -1,11 +1,18 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="chromeElite">
 <head>
     <title>Elitist</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>  
+
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <script src="todo.js"></script>
+    <script type="text/javascript" src="onLoad.js"></script>
     <!-- Google fonts -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
@@ -17,8 +24,6 @@
       <div id="weatherWidget" class="cnt-item">
       </div>
       <div id="newsWidget" class="cnt-item">
-      </div>
-      <div class="cnt-item">
       </div>
     </div>
     <div id="afternoonCnt" class="cnt">
@@ -42,6 +47,21 @@
     <div id="lateNightCnt" class="cnt">
       <div id="redditWidget" class="cnt-item">
       </div>
+    </div>
+    <div ng-controller="TodoWidget" class="cnt-item">
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos | filter:todo.done:false">
+          <div>
+            <span class="todoSpan">{{todo.text}}</span>
+            <input type="button" class="icon-remove-circle" ng-model="todo.done"></input>
+          </div>
+        </li>
+      </ul>
+
+      <form class="form-horizontal" ng-submit="addTodo()">
+        <input type="text" ng-model="formTodoText" placeholder="put new todo here" ng-model-instant>
+        <button class="btn"><i class="icon-plus"></i></button>
+      </form>
     </div>
   </div> <!-- end of wrapper -->
 </body>
