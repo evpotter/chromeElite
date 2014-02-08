@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Evan's New Tab",
+  "name": "chromeElite",
   "description": "Replaces the new tab page with a page with cool pictures and the weather.",
   "version": "1.0",
 
@@ -10,6 +10,6 @@
   ],
   
   "chrome_url_overrides" : {
-    "newtab": "evantab.html"
+    "newtab": "chromeElite.html"
   }
 }
