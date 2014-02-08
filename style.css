@@ -6,7 +6,7 @@ body {
   background-color:black;
   height:100%;
 }
-#wrapper {
+#background {
   background:url('test.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -14,11 +14,28 @@ body {
   background-size: cover;
   height:100vh;
   width:100%;
+  filter: blur(50px);
+  -webkit-filter: blur(50px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: url(blur.svg#blur);
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='5');
+  opacity:0.2;
+}
+#wrapper {
+  position:absolute;
+  top:0;
+  left:0;
+  height:100vh;
 }
 .cnt {
   height:100%;
   padding:20px;
   display: none;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
 }
 .cnt-item {
   border:1px solid pink;
@@ -27,8 +44,6 @@ body {
   margin-right:20px;
   padding:20px;
 }
-
-
 .todoSpan {
   width: 100%;
 }
@@ -37,4 +52,54 @@ body {
 }
 .done-true {
   display: none;
+}
+#redditWidget {
+  padding:-top:20px;
+  position:relative;
+  text-align:right;
+}
+#redditWidget img {
+  -webkit-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.5);
+  width:35em;
+}
+#redditWidget h1 {
+  color:#bbb;
+  display:block;
+  font-family: 'Gentium Basic', serif;
+  font-weight:400;
+  font-size:1.5em;
+  font-style:italic;
+  float:right;
+}
+#clock {
+  padding-top:10%;
+}
+#clock h1 {
+  color:white;
+  font-family:"Roboto", sans-serif;
+  font-weight:100;
+  font-size:6em;
+  margin-bottom:0px;
+  opacity:1.0;
+}
+#clock h2 {
+  color:white;
+  font-family:"Roboto", sans-serif;
+  font-weight:100;
+  font-size:3em;
+  margin:0;
+  opacity:0.8;
+}
+#clock ul {
+  list-style:none;
+  padding:0;
+}
+#clock li {
+  color:white;
+  font-family:"Roboto", sans-serif;
+  font-weight:100;
+  font-size:1.3em;
+  opacity:0.8;
 }

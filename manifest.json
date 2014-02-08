@@ -4,8 +4,10 @@
   "name": "chromeElite",
   "description": "Replaces the new tab page with a page with cool pictures and the weather.",
   "version": "1.0",
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
 
   "permissions": [
+<<<<<<< HEAD
     "https://docs.google.com/feeds/",
     "https://docs.googleusercontent.com/",
     "https://spreadsheets.google.com/feeds/",
@@ -19,6 +21,10 @@
     "bootstrap.css",
     "bootstrap.js",
     "test.jpg"
+=======
+   "http://www.reddit.com/r/pics",
+   "http://fonts.googleapis.com/css?family=Gentium+Basic:700italic"
+>>>>>>> origin
   ],
   "content_security_policy": "script-src 'self' https://cdn.firebase.com https://*.firebaseio.com https://ajax.googleapis.com/; object-src 'self'",
 
