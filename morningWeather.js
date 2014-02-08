@@ -59,11 +59,17 @@ var morningWeather = {
 		console.log(typeof(temps[0]));
 		$('#weatherWidget').highcharts({
 			chart: {
-				type: 'area'
+				type: 'area',
+    backgroundColor: null,
+    plotBackgroundColor: null
 			},
             title: {
                 text: 'Hourly Temperatures for Day',
-                x: -20 //center
+                x: -20, //center
+                style: {
+                  color: '#fff',
+                  font: 'Roboto'
+                }
             },
             subtitle: {
                 text: 'Source: Wunderground.com',
@@ -86,17 +92,17 @@ var morningWeather = {
                 valueSuffix: '°C'
             },
             legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle',
-                borderWidth: 0
+                      enabled: false
             },
             series: [{
                 data: temps
             }],
-            style : {
-                      backgroundColor: null
-                    }
+    labels: {
+              style: {
+                       color:'white'
+                     }
+    }
+
         });
 	}
 };
