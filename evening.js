@@ -1,7 +1,20 @@
 $(document).ready(function() {
-  $('#background').hide();
   $('#redditWidget').hide();
-  $.get("http://www.reddit.com/r/pics",function(data,status) {
+  $('#clock').hide();
+  
+  //Clock  
+  var currentTime = new Date()
+  var hours = currentTime.getHours()
+  var minutes = currentTime.getMinutes()
+  
+  if (minutes < 10)
+    minutes = "0" + minutes
+
+  $('#clock').prepend('<h1>' + hours + ':' + minutes + '</h1>');
+
+
+  //Reddit
+  $.get("http://www.reddit.com/r/aww",function(data,status) {
     var imageDOM = $(data).find("a").filter(function() {
       return $(this).attr('href').match(/.*jp[g|eg]/);
     });
@@ -10,18 +23,23 @@ $(document).ready(function() {
     var imageObj = imageDOM.get(ran);
     var image = $(imageObj).attr('href');
     var text = $(imageObj).text();
-    //$('#background').fadeIn("slow");
-    //$('#redditWidget').fadeIn("slow");
-    $('#background').show();
-    $('#redditWidget').fadeIn();
+    $('#redditWidget').fadeIn("slow");
+    $('#clock').fadeIn("slow");
     $("#background").css("background-image", "url("+image+")");
-    $("#redditWidget").append('<h1>'+text+'</h1><br/>');
     $("#redditWidget").append('<img src="'+image+'">');
   });
-      //.find('img src=\.*imgur*.\')
-      //.filter(function() {
-        //return this.attr('src').match(/\*.imgur\*./);
-       // return this.attr('src');
-      //})
+
+  //Calendar
+  $.ajax({
+    url: 'https://www.google.com/calendar/feeds/umtriangle%40gmail.com/public/basic',
+    dataType: 'xml',
+    success: parseXML
+  });
+  
+  function parseXML(xml){
+    $(xml).find('entry').each( function() {
+    $('#clock').append($(this).find('title').text() + '<br />')
+   });
+   }
 
 });
