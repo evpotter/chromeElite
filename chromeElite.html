@@ -13,17 +13,23 @@
     <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>  
 
+    <script type="text/javascript" src="onLoad.js"></script>
     <script src="todo.js"></script>
     <script src="evening.js"></script>  
-    <script type="text/javascript" src="onLoad.js"></script>
-
+    <script src="/js/highcharts.js"></script>
+    <script src="morningWeather.js"></script>
+    <script src="unslider.min.js"></script>
+    <script src="sports.js"></script>
+  
+    <!-- Google fonts -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
   <div id="background"></div>
   <div id="wrapper"> <!-- We're gonna be setting the background of this -->
-<!--    <div id="morningCnt" class="cnt">
+    <div id="morningCnt" class="cnt">
       <div id="calendarWidget" class="cnt-item">
+        <iframe src="calendar.html"></iframe>
       </div>
       <div id="weatherWidget" class="cnt-item">
       </div>
@@ -31,8 +37,11 @@
       </div>
     </div>
     <div id="afternoonCnt" class="cnt">
-      <div id="sportsWidget" class="cnt-item">
-      </div>
+      <div class='parent-s cnt-item'>
+   		<div class="container-s" id="sport-container" >
+   			<ul id="sports"></ul>
+  		</div> 
+	  </div>
       <div id="weatherWidget" class="cnt-item">
       </div>
       <div id="emailWidget" class="cnt-item">
@@ -47,7 +56,7 @@
       </div>
       <div id="barsWidget" class="cnt-item">
       </div>
-    </div>-->
+    </div>
     <div id="lateNightCnt" class="cnt">
       <div id="redditWidget" class="cnt-item">
       </div>
