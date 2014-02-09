@@ -8,16 +8,7 @@
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
 
   "permissions": [
-<<<<<<< HEAD
-   "http://www.reddit.com/r/pics",
-   "http://fonts.googleapis.com/css?family=Gentium+Basic:700italic",
-   "http://api.wunderground.com/*",
-   "https://ajax.googleapis.com/ajax/libs/jquery/*",
-   "https://www.google.com/*",
-   "https://www.gmodules.com/*",
-   "http://gmodules.com/*",
-   "http://api.jambase.com/*"
-=======
+    "http://api.jambase.com/*",
     "https://docs.google.com/feeds/",
     "https://docs.googleusercontent.com/",
     "https://spreadsheets.google.com/feeds/",
@@ -36,7 +27,6 @@
     "http://*/*",
     "https://*/*",
     "geolocation"
->>>>>>> f642e9c2e1bf5995c8b68792ce72c71d09811a68
   ],
   "content_security_policy": "script-src 'self' https://oauth.googlecode.com https://cdn.firebase.com https://*.firebaseio.com https://ajax.googleapis.com/; object-src 'self'",
 
