@@ -13,6 +13,6 @@ $(document).ready(function() {
   } else if (hour >= 17 && hour < 22) {
     $("#eveningCnt").fadeIn("slow");
   } else {
-    $("#lateNightCnt").fadeIn("slow");
+    $("#morningCnt").fadeIn("slow");
   }
 })
