@@ -25,8 +25,9 @@
     <script src="unslider.min.js"></script>
     <script src="sports.js"></script>
     <script src="events_near.js"></script>
+    <script src="lateNight.js"></script>
     <script src="onLoad.js"></script>
-  
+
     <!-- Google fonts -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
@@ -80,24 +81,28 @@
       </div>
       <div id="weatherWidget3" class="cnt-item">
       </div>
+      <h2>Popular movie rentals</h2>
+      <div id="movie-parent" class='parent-s cnt-item'>
+        <div class="container-s" id="movie-container">
+          <ul id="movies"></ul>
+        </div> 
+      </div>
       <div id="clock" class="cnt-item">
         <div ng-controller="TodoWidget" id="todoList">
           <h2>Things</h2>
-        <ul class="unstyled">
-          <li ng-repeat="todo in todos">
-            <form>
-              <a href="#none" value="x" ng-click="removeTodo(this)" class="btn-close">x</a>
-              <span class="">{{todo.value}}</span>
-
-            </li>
+          <ul class="unstyled">
+            <li ng-repeat="todo in todos">
+              <form>
+                <a href="#none" value="x" ng-click="removeTodo(this)" class="btn-close">x</a>
+                <span class="">{{todo.value}}</span>
+              </li>
+            </form>
+          </ul>
+          <form ng-submit="addTodo()">
+            <input type="text" ng-model="formTodoText" size="30" placeholder="Item">
+            <input class="btn-primary" type="submit" value="add">
           </form>
-        </ul>
-        <form ng-submit="addTodo()">
-          <input type="text" ng-model="formTodoText" size="30" placeholder="Item">
-          <input class="btn-primary" type="submit" value="add">
-        </form>
-    </div>
-    </div>
+        </div>
       </div>
     </div> 
   </div> <!-- end of wrapper -->

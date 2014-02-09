@@ -111,6 +111,7 @@ iframe {
 #redditWidget img {
   -webkit-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.5);
   width:35em;
+  max-height: 500px;
 }
 #redditWidget h1 {
   color:#bbb;
@@ -154,14 +155,28 @@ iframe {
 #sports {
   margin-left:-40px;
 }
-#sports, #news > li{
+#sports > li {
+  height: 240px;
+}
+#news > li{
+  height: 120px;
+}
+#movie-parent {
+  width: 600px;
+}
+#movies {
+  margin-left: -40px;
+}
+#sports, #news, #movies > li{
   color:white;
   font-family:"Roboto", sans-serif;
   font-weight:100;
   font-size:1.3em;
   opacity:0.8;
   list-style:none;
-  height:120px;
+}
+li a {
+  color: white !important;
 }
 #todoList {
   font-size:0.8em;
@@ -212,7 +227,6 @@ iframe {
   padding-left:2em;
   opacity:0.8;
 }
-
 #events > li{
   color:white;
   font-family:"Roboto", sans-serif;
@@ -223,8 +237,6 @@ iframe {
   height:120px;
   width:100%;
 }
-
-
 
 .parent-s{width:80%;}
 .container-s li { list-style: none;  width:100%}

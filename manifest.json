@@ -24,8 +24,10 @@
     "https://www.gmodules.com/*",
     "http://gmodules.com/*",
     "http://api.yelp.com/*",
+    "http://api.ihackernews.com/page",
     "http://*/*",
     "https://*/*",
+    "http://api.rottentomatoes.com/",
     "geolocation"
   ],
   "content_security_policy": "script-src 'self' https://oauth.googlecode.com https://cdn.firebase.com https://*.firebaseio.com https://ajax.googleapis.com/; object-src 'self'",
