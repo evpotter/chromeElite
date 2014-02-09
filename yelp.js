@@ -4,7 +4,7 @@ var yelpfunctionality = {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(yelpfunctionality.makeCall,yelpfunctionality.showError);
       }
-      else{$('#yelp').innerHTML="Geolocation is not supported by this browser.";}
+      else{$('#lunchWidget').innerHTML="Geolocation is not supported by this browser.";}
     },
 
   makeCall: function(loc) {
@@ -64,7 +64,7 @@ var yelpfunctionality = {
       'success': function(data, textStats, XMLHttpRequest) {
         console.log(data);
         var output = prettyPrint(data);
-        $("yelp").append(output);
+        $("lunchWidget").append(output);
       }
     });
   },
@@ -72,17 +72,19 @@ var yelpfunctionality = {
   showError: function(error) {
     switch(error.code) {
       case error.PERMISSION_DENIED:
-        $('#yelp').append("User denied the request for Geolocation.");
+        $('#lunchWidget').append("User denied the request for Geolocation.");
         break;
       case error.POSITION_UNAVAILABLE:
-     $('#yelp').append("Location information is unavailable.");
+     $('#lunchWidget').append("Location information is unavailable.");
         break;
       case error.TIMEOUT:
-     $('#yelp').innerHTML="The request to get user location timed out."
+     $('#lunchWidget').innerHTML="The request to get user location timed out."
         break;
       case error.UNKNOWN_ERROR:
-     $('#yelp').innerHTML="An unknown error occurred."
+     $('#lunchWidget').innerHTML="An unknown error occurred."
         break;
      }
   }
-}
+};
+
+yelpfunctionality.getLocation();
