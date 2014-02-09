@@ -2,17 +2,11 @@ function showJams(zipcode){
 	var keyapi = "5BAZ7QMPY2UEZNPCH5QKCCKQ";
 	 var eventUrl = "http://api.jambase.com/events?zipCode="+zipcode+"&radius=10&page=0&api_key=7epku6upd99cy4y93xw9mgyz";
 	$.getJSON(eventUrl,function(eventData){
-		console.log(eventData['Events']);
 		var allEvents = eventData['Events']; 
-		console.log(allEvents.length);
 		for(var i=0; i<allEvents.length; i++){
-		console.log(allEvents[i]['TicketUrl']);
 		var artistobj = allEvents[i]['Artists'];
-		console.log(artistobj+":");
 		var link  = artistobj[3];
-	    console.log(link+"::");
 		var venue =  allEvents[i]['Venue']['Address'];
- 		console.log(venue+":::");
 			for(var j=0; j<allEvents[i]['Artists']['length']; j++)
 			{
 				var artist = artistobj[j];
@@ -73,6 +67,5 @@ if (navigator.geolocation) {
 }
 
 $(window).load(function(){
-	console.log("IN EVENT . JS");
 	getZip();
 });
