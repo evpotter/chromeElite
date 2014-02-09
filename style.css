@@ -68,6 +68,21 @@ h2 {
   margin:10px;
   padding:0;
 }
+#weatherWidget2 {
+  border-left:1px solid #63D1F4;
+  margin-top:100px;
+  margin-left:20px;
+  padding-top:10px;
+  padding-left:20px;
+}
+#weatherWidget2 img {
+  float:left;
+}
+#weatherWidget2 p {
+  float:left;
+  margin:10px;
+  padding:0;
+}
 .cnt {
   height:400px;
   padding:20px;
@@ -127,7 +142,9 @@ iframe {
   float:right;
 }
 #clock {
-  padding-top:0;
+  float:left;
+  clear:left;
+  padding-left:40px;
 }
 #clock h1 {
   color:white;
@@ -138,7 +155,7 @@ iframe {
   opacity:1.0;
 }
 #clock h2 {
-  color:white;
+  color:#63D1F4;
   font-family:"Roboto", sans-serif;
   font-weight:100;
   font-size:3em;
@@ -179,7 +196,6 @@ iframe {
   width: 40%;
 }
 #bars-parent {
-  margin-left: 60px;
 }
 #sports, #news, #movies, #lunch, #sports2 > li{
   color:white;

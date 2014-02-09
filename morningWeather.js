@@ -155,12 +155,6 @@ var morningWeather = {
 		var temp1 = (weather.forecast.simpleforecast.forecastday[0].high.fahrenheit + "/" + weather.forecast.simpleforecast.forecastday[0].low.fahrenheit);
 		var forecast1 = weather.forecast.simpleforecast.forecastday[0].icon;
 		var img1 = weather.forecast.simpleforecast.forecastday[0].icon_url;
-		$('#weatherWidget3').append('<img src="'+ img1 + '">');
-		$('#weatherWidget3').append('<p>'+ forecast1 + '</p>');
-		$('#weatherWidget3').append('<p>'+ temp1 + '</p>');
-		$('#weatherWidget4').append('<img src="'+ img1 + '">');
-		$('#weatherWidget4').append('<p>'+ forecast1 + '</p>');
-		$('#weatherWidget4').append('<p>'+ temp1 + '</p>');
 		var temp2 = (weather.forecast.simpleforecast.forecastday[1].high.fahrenheit + "/" + weather.forecast.simpleforecast.forecastday[0].low.fahrenheit);
 		var forecast2 = weather.forecast.simpleforecast.forecastday[1].icon;
 		var img2 = weather.forecast.simpleforecast.forecastday[1].icon_url;

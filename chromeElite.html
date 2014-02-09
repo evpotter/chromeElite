@@ -68,8 +68,6 @@
       </div>
     </div>
     <div id="eveningCnt" class="cnt">
-      <div id="sportsWidget" class="cnt-item">
-      </div>
       <div class='parent-s cnt-item' id="nearbyEventsWidget">
         <h2>Events close to you </h2>
         <div class="container-s" id="event-container" >
@@ -83,14 +81,13 @@
         </div> 
       </div>
       <div id="weatherWidget3" class="cnt-item">
+        <h2>Weather Tomorrow</h2>
       </div>
       <div id="barsWidget" class="cnt-item">
       </div>
     </div>
     <div id="lateNightCnt" class="cnt">
       <div id="redditWidget" class="cnt-item">
-      </div>
-      <div id="weatherWidget3" class="cnt-item">
       </div>
       <div id="movie-parent" class='parent-s cnt-item'>
         <h2>Popular movie rentals</h2>
@@ -104,9 +101,11 @@
           <ul id="bars"></ul>
         </div> 
       </div>
+    </div> 
+
       <div id="clock" class="cnt-item">
         <div ng-controller="TodoWidget" id="todoList">
-          <h2>Things</h2>
+          <h2>Things for today</h2>
           <ul class="unstyled">
             <li ng-repeat="todo in todos">
               <form>
@@ -121,7 +120,6 @@
           </form>
         </div>
       </div>
-    </div> 
     </div> 
   </div> <!-- end of wrapper -->
 </body>
