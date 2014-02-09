@@ -1,12 +1,23 @@
 var app = angular.module("chromeElite", ["firebase"])
 
 function TodoWidget($scope, $firebase) {
-  var ref = new Firebase("https://chromeelite.firebaseio.com/")
+  var ref = new Firebase("https://chromeelite.firebaseio.com/todos")
   $scope.todos = $firebase(ref)
-  console.log($scope.todos)
-  $scope.addTodo = function(e) {
-    // if (e && e.keyCode != 13) return
-    $scope.todos.$add({text: $scope.formTodoText, done:false})
+
+  $scope.addTodo = function() {
+    var key = "todo" + $scope.formTodoText
+    var child = ref.child(key)
+    child.set({value:key})
+    $scope.formTodoText = ""
+  }
+
+  $scope.removeTodo = function(obj) {
+    var todo = ref.child(obj.todo.value)
+    console.log(todo)
+    todo.remove();
+    console.log($scope.todos)
     $scope.formTodoText = ""
   }
 }
+
+
