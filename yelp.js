@@ -36,7 +36,7 @@ var yelpfunctionality = {
 
     parameters = [];
     parameters.push(['term', terms]);
-    parameters.push(['sort', 1]);
+    parameters.push(['sort', '1']);
     parameters.push(['ll', near]);
     parameters.push(['callback', 'cb']);
     parameters.push(['oauth_consumer_key', auth.consumerKey]);
@@ -45,7 +45,7 @@ var yelpfunctionality = {
     parameters.push(['oauth_signature_method', 'HMAC-SHA1']);
 
     var message = { 
-      'action': 'https://api.yelp.com/v2/search',
+      'action': 'http://api.yelp.com/v2/search',
       'method': 'GET',
       'parameters': parameters 
     };
