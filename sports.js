@@ -13,15 +13,10 @@ $(window).load(function(){
   		}
   		console.log(data['feed'].length);
   		$.each( data['feed'], function( key, val ) {
-   	    //items.push( "<li><p> " + val.description+ "</p></li>" );
-   	    
    	    $('.container-s > #sports').append("<li><p> " + val.description+ "</p></li>");
    	    
  	 });
- 		
+   });
       $('#sport-container').unslider();
-
   });
 });
-	
-  

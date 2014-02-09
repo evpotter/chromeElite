@@ -14,7 +14,7 @@ var morningWeather = {
 		console.log(url);
 		var req = new XMLHttpRequest();
 		req.open('GET', url, true);
-		req.onload = morningWeather.getWeather.bind(req.responseText);
+		req.onload = morningWeather.callWeather.bind(req.responseText);
 		req.send(null);
 	},
 
@@ -35,7 +35,13 @@ var morningWeather = {
 	   }
 	},
 
-	getWeather: function(resp) {
+	callWeather: function(resp) {
+		morningWeather.getMorningWeather(resp);
+		morningWeather.getAfternoonWeather(resp);
+		morningWeather.getNightWeather(resp);
+	},
+
+	getMorningWeather: function(resp) {
 		var apikey = "c98c7a6130638b6f";
 		var loc = JSON.parse(resp.target.responseText);
 		console.log(loc);
@@ -43,11 +49,35 @@ var morningWeather = {
 		console.log(url);
 		var req = new XMLHttpRequest();
 		req.open('GET', url, true);
-		req.onload = morningWeather.showWeather.bind(this.responseText);
+		req.onload = morningWeather.showMorningWeather.bind(this.responseText);
 		req.send(null);
 	},
 
-	showWeather: function(resp) {
+	getAfternoonWeather: function(resp) {
+		var apikey = "c98c7a6130638b6f";
+		var loc = JSON.parse(resp.target.responseText);
+		console.log(loc);
+		var url = "http://api.wunderground.com/api/" + apikey + "/forecast/q/" + loc.location.state + "/" + loc.location.city + ".json";
+		console.log(url);
+		var req = new XMLHttpRequest();
+		req.open('GET', url, true);
+		req.onload = morningWeather.showAfternoonWeather.bind(this.responseText);
+		req.send(null);
+	},
+
+	getNightWeather: function(resp) {
+		var apikey = "c98c7a6130638b6f";
+		var loc = JSON.parse(resp.target.responseText);
+		console.log(loc);
+		var url = "http://api.wunderground.com/api/" + apikey + "/forecast/q/" + loc.location.state + "/" + loc.location.city + ".json";
+		console.log(url);
+		var req = new XMLHttpRequest();
+		req.open('GET', url, true);
+		req.onload = morningWeather.showNightWeather.bind(this.responseText);
+		req.send(null);
+	},
+
+	showMorningWeather: function(resp) {
 		var weather = JSON.parse(resp.target.responseText);
 		console.log(weather);
 		var hours = [];
@@ -57,11 +87,12 @@ var morningWeather = {
 			temps.push(parseInt(entry.temp.english));
 		});
 		console.log(typeof(temps[0]));
-		$('#weatherWidget').highcharts({
+		$('#weatherWidget1').highcharts({
 			chart: {
 				type: 'area',
-    backgroundColor: null,
-    plotBackgroundColor: null
+    			backgroundColor: null,
+    			plotBackgroundColor: null,
+    			width: 900
 			},
             title: {
                 text: 'Hourly Temperatures for Day',
@@ -80,7 +111,7 @@ var morningWeather = {
             },
             yAxis: {
                 title: {
-                    text: 'Temperature (°C)'
+                    text: 'Temperature (F)'
                 },
                 plotLines: [{
                     value: 0,
@@ -89,21 +120,56 @@ var morningWeather = {
                 }]
             },
             tooltip: {
-                valueSuffix: '°C'
+                valueSuffix: 'F'
             },
             legend: {
                       enabled: false
             },
             series: [{
-                data: temps
+              name:"Temp",
+              data: temps
             }],
-    labels: {
+    		labels: {
               style: {
                        color:'white'
                      }
-    }
+    		}
 
         });
+	},
+
+	showAfternoonWeather: function(resp) {
+		var weather = JSON.parse(resp.target.responseText);
+		console.log(weather);
+		var temp = (weather.forecast.simpleforecast.forecastday[0].high.fahrenheit + "&#186;F / " + weather.forecast.simpleforecast.forecastday[0].low.fahrenheit) + " &#186;C" ;
+		var forecast = weather.forecast.simpleforecast.forecastday[0].icon;
+		var img = weather.forecast.simpleforecast.forecastday[0].icon_url;
+		$('#weatherWidget2').append('<img src="'+ img + '">');
+		$('#weatherWidget2').append('<p>'+ forecast + '</p>');
+		$('#weatherWidget2').append('<p>'+ temp + '</p>');
+	},
+
+	showNightWeather: function(resp) {
+		var weather = JSON.parse(resp.target.responseText);
+		console.log(weather);
+		var temp1 = (weather.forecast.simpleforecast.forecastday[0].high.fahrenheit + "/" + weather.forecast.simpleforecast.forecastday[0].low.fahrenheit);
+		var forecast1 = weather.forecast.simpleforecast.forecastday[0].icon;
+		var img1 = weather.forecast.simpleforecast.forecastday[0].icon_url;
+		$('#weatherWidget3').append('<img src="'+ img1 + '">');
+		$('#weatherWidget3').append('<p>'+ forecast1 + '</p>');
+		$('#weatherWidget3').append('<p>'+ temp1 + '</p>');
+		$('#weatherWidget4').append('<img src="'+ img1 + '">');
+		$('#weatherWidget4').append('<p>'+ forecast1 + '</p>');
+		$('#weatherWidget4').append('<p>'+ temp1 + '</p>');
+		var temp2 = (weather.forecast.simpleforecast.forecastday[1].high.fahrenheit + "/" + weather.forecast.simpleforecast.forecastday[0].low.fahrenheit);
+		var forecast2 = weather.forecast.simpleforecast.forecastday[1].icon;
+		var img2 = weather.forecast.simpleforecast.forecastday[1].icon_url;
+		$('#weatherWidget3').append('<img src="'+ img2 + '">');
+		$('#weatherWidget3').append('<p>'+ forecast2 + '</p>');
+		$('#weatherWidget3').append('<p>'+ temp2 + '</p>');
+		$('#weatherWidget4').append('<img src="'+ img2 + '">');
+		$('#weatherWidget4').append('<p>'+ forecast2 + '</p>');
+		$('#weatherWidget4').append('<p>'+ temp2 + '</p>');
 	}
 };
 

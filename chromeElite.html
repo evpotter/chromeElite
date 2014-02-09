@@ -1,19 +1,27 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="chromeElite">
 <head>
     <title>Elitist</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="todoList.css" type="text/css" />
+        <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'/>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>  
+
+    <script type="text/javascript" src="onLoad.js"></script>
+    <script src="todo.js"></script>
+    <script src="news.js"></script>
     <script src="evening.js"></script>  
     <script src="/js/highcharts.js"></script>
     <script src="morningWeather.js"></script>
     <script src="unslider.min.js"></script>
     <script src="sports.js"></script>
      <script src="events_near.js"></script>
+    <script src="onLoad.js"></script>
   
     <!-- Google fonts -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -21,23 +29,28 @@
 <body>
   <div id="background"></div>
   <div id="wrapper"> <!-- We're gonna be setting the background of this -->
-    <div id="morningCnt" class="cnt">
-      <div id="calendarWidget" class="cnt-item">
-        <iframe src="calendar.html"></iframe>
+    <div id="wrapper-inner">
+      <div id="header">
+        <div id="realClock" class="header-item"></div>
+        <div id="weatherWidget2" class="header-item"></div>
       </div>
-      <div id="weatherWidget" class="cnt-item">
+    <div id="morningCnt" class="cnt">
+      <div id="weatherWidget1" class="cnt-item">
+      </div>
+      <div id="calendarWidget" class="cnt-item">
+        <h2>Calendar</h2>
       </div>
       <div id="newsWidget" class="cnt-item">
+        <h2>News</h2>
       </div>
     </div>
     <div id="afternoonCnt" class="cnt">
+          <h2>Sports</h2>
       <div class='parent-s cnt-item'>
-   		<div class="container-s" id="sport-container" >
-   			<ul id="sports"></ul>
-  		</div> 
+        <div class="container-s" id="sport-container" >
+     			<ul id="sports"></ul>
+    		</div> 
 	  </div>
-      <div id="emailWidget" class="cnt-item">
-      </div>
       <div class="lunchWidget">
       </div>
     </div>
@@ -50,6 +63,7 @@
   		</div> 
   		<div> Powered by JamBase™"</div>
 	  </div>
+      <div id="weatherWidget3" class="cnt-item">
       </div>
       <div id="barsWidget" class="cnt-item">
       </div>
@@ -57,15 +71,28 @@
     <div id="lateNightCnt" class="cnt">
       <div id="redditWidget" class="cnt-item">
       </div>
-      <div id="clock" class="cnt-item">
-        <h2>Tomorrow</h2>
-        <ul>
-          <li>Beat Evan</li>
-          <li>Tell Evan he's a tomato</li>
-          <li>Do other stuff</li>
-        </ul>
+      <div id="weatherWidget3" class="cnt-item">
       </div>
+      <div id="clock" class="cnt-item">
+        <div ng-controller="TodoWidget" id="todoList">
+          <h2>Things</h2>
+        <ul class="unstyled">
+          <li ng-repeat="todo in todos">
+            <form>
+              <a href="#none" value="x" ng-click="removeTodo(this)" class="btn-close">x</a>
+              <span class="">{{todo.value}}</span>
+
+            </li>
+          </form>
+        </ul>
+        <form ng-submit="addTodo()">
+          <input type="text" ng-model="formTodoText" size="30" placeholder="Item">
+          <input class="btn-primary" type="submit" value="add">
+        </form>
     </div>
+    </div>
+      </div>
+    </div> 
   </div> <!-- end of wrapper -->
 </body>
 </html>
