@@ -32,7 +32,7 @@ $(document).ready(function() {
 
   //Calendar
    $.ajax({
-     url: 'https://www.google.com/calendar/feeds/indian__en%40holiday.calendar.google.com/public/basic?max-results=5&orderby=starttime&sortorder=ascending&futureevents=true',
+     url: 'https://www.google.com/calendar/feeds/epotter12%40gmail.com/private-abe8896746754799ccd2fadcb2e38818/basic?max-results=5&orderby=starttime&sortorder=ascending&futureevents=true',
     dataType: 'xml',
     success: parseXML
   });
@@ -41,7 +41,7 @@ $(document).ready(function() {
     $(xml).find('entry').each( function() {
       var summary =  $(this).find('summary').text();
       var title =  $(this).find('title').text();
-      $('#calendarWidget').append('<h4>'+title + '</h4><h5>' + summary.substring(10,21)+ '</h5><br />');
+      $('#calendarWidget').append('<h4>'+title + '</h4><h5>' + summary.substring(summary.indexOf('First start:')+12,summary.indexOf('First start:')+36)+ '</h5><br />');
 
    });
    }
