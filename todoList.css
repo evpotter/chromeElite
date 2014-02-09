@@ -1,0 +1,30 @@
+#additem{
+  font-size:30px;width:80%;
+  border:1px solid #ddd;
+  text-align:center;
+  border-radius:5px;-moz-border-radius:5px;
+  font-family:Arial, Helvetica, sans-serif;
+  margin:5px auto 20px;
+  padding:5px
+ }
+ol{list-style:none;padding:0}
+#todolist li{ 
+   line-height:32px; 
+   color:#ddd; 
+   position:relative; 
+   font-size:40px;cursor:default;
+   text-align:center
+}
+
+.done{
+ font-size:40%;
+ position:absolute;
+ top:50%;
+ left:50%;
+ width:16px;
+ height:16px;
+ text-decoration:none;
+ outline:none;
+ margin:-8px 0 0 -8px 
+}
+ 

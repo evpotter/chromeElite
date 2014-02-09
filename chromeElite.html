@@ -1,13 +1,19 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="chromeElite">
 <head>
     <title>Elitist</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="todoList.css" type="text/css" />
+        <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'/>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>  
+
+    <script type="text/javascript" src="onLoad.js"></script>
+    <script src="todo.js"></script>
     <script src="evening.js"></script>  
     <script src="/js/highcharts.js"></script>
     <script src="morningWeather.js"></script>
@@ -52,14 +58,23 @@
       <div id="redditWidget" class="cnt-item">
       </div>
       <div id="clock" class="cnt-item">
-        <h2>Tomorrow</h2>
-        <ul>
-          <li>Beat Evan</li>
-          <li>Tell Evan he's a tomato</li>
-          <li>Do other stuff</li>
-        </ul>
+        <div ng-controller="TodoWidget" id="todoList">
+          <ul class="unstyled">
+              <li ng-repeat="todo in todos">
+            <form>
+                <span class="">{{todo}}</span>
+                <input type="submit" value="done" ng-click="removeTodo(this)"></input>
+              </li>
+            </form>
+          </ul>
+          <form ng-submit="addTodo()">
+            <input type="text" ng-model="formTodoText" size="30" placeholder="add new todo here">
+            <input class="btn-primary" type="submit" value="add">
+          </form>
+        </div>
       </div>
     </div>
+    
   </div> <!-- end of wrapper -->
 </body>
 </html>
