@@ -5,7 +5,6 @@
   "name": "chromeElite",
   "description": "Replaces the new tab page with a page with cool pictures and the weather.",
   "version": "1.0",
-  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
 
   "permissions": [
     "http://api.jambase.com/*",
@@ -24,13 +23,14 @@
     "https://www.google.com/*",
     "https://www.gmodules.com/*",
     "http://gmodules.com/*",
+    "http://api.yelp.com/*",
     "http://api.ihackernews.com/page",
     "http://*/*",
     "https://*/*",
     "http://api.rottentomatoes.com/",
     "geolocation"
   ],
-  "content_security_policy": "script-src 'self' https://cdn.firebase.com https://*.firebaseio.com https://ajax.googleapis.com/; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://oauth.googlecode.com https://cdn.firebase.com https://*.firebaseio.com https://ajax.googleapis.com/; object-src 'self'",
 
   "chrome_url_overrides" : {
     "newtab": "chromeElite.html"

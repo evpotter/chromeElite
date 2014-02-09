@@ -49,7 +49,7 @@ var morningWeather = {
 		console.log(url);
 		var req = new XMLHttpRequest();
 		req.open('GET', url, true);
-		req.onload = morningWeather.showMorningWeather.bind(this.responseText);
+		req.onload = morningWeather.showMorningWeather.bind(req.responseText);
 		req.send(null);
 	},
 
@@ -61,7 +61,7 @@ var morningWeather = {
 		console.log(url);
 		var req = new XMLHttpRequest();
 		req.open('GET', url, true);
-		req.onload = morningWeather.showAfternoonWeather.bind(this.responseText);
+		req.onload = morningWeather.showAfternoonWeather.bind(req.responseText);
 		req.send(null);
 	},
 
@@ -73,7 +73,7 @@ var morningWeather = {
 		console.log(url);
 		var req = new XMLHttpRequest();
 		req.open('GET', url, true);
-		req.onload = morningWeather.showNightWeather.bind(this.responseText);
+		req.onload = morningWeather.showNightWeather.bind(req.responseText);
 		req.send(null);
 	},
 
