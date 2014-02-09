@@ -14,7 +14,6 @@
 
     <script type="text/javascript" src="https://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
     <script type="text/javascript" src="https://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
-    <script src="yelp.js"></script>
 
     <script type="text/javascript" src="onLoad.js"></script>
     <script src="todo.js"></script>
@@ -26,6 +25,8 @@
     <script src="sports.js"></script>
     <script src="events_near.js"></script>
     <script src="lateNight.js"></script>
+    <script src="lunch.js"></script>
+    <script src="bars.js"></script>
     <script src="onLoad.js"></script>
 
     <!-- Google fonts -->
@@ -69,14 +70,14 @@
     <div id="eveningCnt" class="cnt">
       <div id="sportsWidget" class="cnt-item">
       </div>
-      <h2>Events close to you </h2>
-     <div class='parent-s cnt-item' id="nearbyEventsWidget">
-   		<div class="container-s" id="event-container" >
-   			<ul id="events"></ul>
-  		</div> 
-	  </div>
-	  <h2><br>Sports</h2>
+      <div class='parent-s cnt-item' id="nearbyEventsWidget">
+        <h2>Events close to you </h2>
+        <div class="container-s" id="event-container" >
+          <ul id="events"></ul>
+        </div> 
+      </div>
       <div class='parent-s cnt-item'>
+        <h2><br>Sports</h2>
         <div class="container-s" id="sport-container2">
           <ul id="sports2"></ul>
         </div> 
@@ -91,10 +92,16 @@
       </div>
       <div id="weatherWidget3" class="cnt-item">
       </div>
-      <h2>Popular movie rentals</h2>
       <div id="movie-parent" class='parent-s cnt-item'>
+        <h2>Popular movie rentals</h2>
         <div class="container-s" id="movie-container">
           <ul id="movies"></ul>
+        </div> 
+      </div>
+      <div id="bars-parent" class='parent-s cnt-item'>
+        <h2>It's late, here's some bars</h2>
+        <div class="container-s" id="bars-container">
+          <ul id="bars"></ul>
         </div> 
       </div>
       <div id="clock" class="cnt-item">

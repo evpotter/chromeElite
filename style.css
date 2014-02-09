@@ -152,16 +152,13 @@ iframe {
   font-size:1.3em;
   opacity:0.8;
 }
-#sports, #sports2 {
-  margin-left:-40px;
-}
-#lunch {
+#lunch, #bars, #movies, #bars, #sports, #sports2 {
   margin-left: -40px;
 }
-#lunch > li {
+#lunch, #bars > li {
   height: 480px;
 }
-#lunch li img {
+#lunch, #bars li img {
   /*width: 100%;*/
   height: 400px;
 }
@@ -174,11 +171,11 @@ iframe {
 #news > li{
   height: 120px;
 }
-#movie-parent {
+#movie-parent, #bars-parent {
   width: 40%;
 }
-#movies {
-  margin-left: -40px;
+#bars-parent {
+  margin-left: 60px;
 }
 #sports, #news, #movies, #lunch, #sports2 > li{
   color:white;
