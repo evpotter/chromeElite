@@ -40,11 +40,11 @@ h2 {
   position:relative;
   margin-left:auto;
   margin-right:auto;
-  top:10%;
+  top:0px;
 }
 #header {
   display:block;
-  height:300px;
+  height:200px;
 }
 .header-item {
   color:white;
@@ -152,7 +152,7 @@ iframe {
   opacity:0.8;
 }
 #sports {
-  margin-left:-20px;
+  margin-left:-40px;
 }
 #sports, #news > li{
   color:white;
@@ -161,7 +161,7 @@ iframe {
   font-size:1.3em;
   opacity:0.8;
   list-style:none;
-  height:320px;
+  height:120px;
 }
 #todoList {
   font-size:0.8em;
@@ -220,7 +220,7 @@ iframe {
   font-size:1.3em;
   opacity:0.8;
   list-style:none;
-  height:320px;
+  height:120px;
   width:100%;
 }
 
