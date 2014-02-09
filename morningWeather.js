@@ -61,7 +61,8 @@ var morningWeather = {
 			chart: {
 				type: 'area',
     backgroundColor: null,
-    plotBackgroundColor: null
+    plotBackgroundColor: null,
+    width: 900
 			},
             title: {
                 text: 'Hourly Temperatures for Day',
@@ -80,7 +81,7 @@ var morningWeather = {
             },
             yAxis: {
                 title: {
-                    text: 'Temperature (°C)'
+                    text: 'Temperature (F)'
                 },
                 plotLines: [{
                     value: 0,
@@ -89,7 +90,7 @@ var morningWeather = {
                 }]
             },
             tooltip: {
-                valueSuffix: '°C'
+                valueSuffix: 'C'
             },
             legend: {
                       enabled: false

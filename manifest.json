@@ -14,7 +14,8 @@
    "https://ajax.googleapis.com/ajax/libs/jquery/*",
    "https://www.google.com/*",
    "https://www.gmodules.com/*",
-   "http://gmodules.com/*"
+   "http://gmodules.com/*",
+   "geolocation"
   ],
   "chrome_url_overrides" : {
     "newtab": "chromeElite.html"

@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 
   //Reddit
-  $.get("http://www.reddit.com/r/aww",function(data,status) {
+  $.get("http://www.reddit.com/r/pics",function(data,status) {
     var imageDOM = $(data).find("a").filter(function() {
       return $(this).attr('href').match(/.*jp[g|eg]/);
     });
