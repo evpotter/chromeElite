@@ -4,16 +4,16 @@ html, body {
 
 body {
   background-color:black;
+  font-family:"Roboto" sans-serif;
   height:100%;
 }
-
 h2 {
   color:#63D1F4;
   font-family:"Roboto", sans-serif;
   font-weight:100;
   font-size:3em;
   margin:0;
-  margin-left:40px;
+//  margin-left:40px;
   padding:0;
   opacity:0.8;
 }
@@ -75,6 +75,7 @@ h2 {
   position:relative;
   margin-left:auto;
   margin-right:auto;
+  margin-top:30px;
 }
 iframe {
   height: 400px;
@@ -84,6 +85,10 @@ iframe {
   float:left;
   margin-right:20px;
   padding:20px;
+}
+.cnt-item h2 {
+  margin:0;
+  -webkit-margin-before: 0;
 }
 .todoSpan {
   width: 100%;
@@ -111,7 +116,6 @@ iframe {
 #redditWidget img {
   -webkit-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.5);
   width:35em;
-  max-height: 500px;
 }
 #redditWidget h1 {
   color:#bbb;
@@ -201,7 +205,7 @@ li a {
 }
 #todoList input[type=text] {
   border:none;
-  padding:2px;
+  padding:10px;
 }
 #todoList input[type=submit] {
   background:none;
@@ -236,6 +240,10 @@ li a {
   font-weight:100;
   padding-left:2em;
   opacity:0.8;
+}
+span.address {
+  font-family:"Roboto" sans-serif;
+  font-size:0.7em;
 }
 #events > li{
   color:white;

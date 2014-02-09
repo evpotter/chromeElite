@@ -44,7 +44,7 @@
       var response = JSON.parse(data.target.response)
       console.log(response)
       $.each( response.businesses, function( key, val ) {
-        $('.container-s > #lunch').append("<li><p><a href=\"" + val.url + "\">" + val.name + "</a></p><br/><img src=\"" + val.photo_url + "\"></li>");
+        $('.container-s > #lunch').append("<li><p><a href=\"" + val.url + "\">" + val.name + "</a><br/><span class=\"address\">"+val.address1 + ', '+val.address2 + '<br/>'+ val.city +  '<br/>'+val.state +val.zip+ "</span></p></li>");
         });
       $('#lunch-container').unslider();
     }
