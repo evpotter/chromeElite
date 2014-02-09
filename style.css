@@ -68,20 +68,11 @@ h2 {
   margin:10px;
   padding:0;
 }
-#weatherWidget2 {
-  border-left:1px solid #63D1F4;
-  margin-top:100px;
-  margin-left:20px;
-  padding-top:10px;
-  padding-left:20px;
-}
-#weatherWidget2 img {
-  float:left;
-}
-#weatherWidget2 p {
+#weatherWidget3 p {
   float:left;
   margin:10px;
   padding:0;
+  text-transform:uppercase;
 }
 .cnt {
   height:400px;
@@ -145,6 +136,8 @@ iframe {
   float:left;
   clear:left;
   padding-left:40px;
+  padding-top:0;
+  margin-top:0;
 }
 #clock h1 {
   color:white;
@@ -177,7 +170,6 @@ iframe {
   margin-left: -40px;
 }
 #lunch, #bars > li {
-  height: 480px;
 }
 #lunch, #bars li img {
   /*width: 100%;*/

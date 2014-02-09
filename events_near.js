@@ -1,6 +1,6 @@
 function showJams(zipcode){
 	var keyapi = "5BAZ7QMPY2UEZNPCH5QKCCKQ";
-	 var eventUrl = "http://api.jambase.com/events?zipCode="+zipcode+"&radius=10&page=0&api_key=7epku6upd99cy4y93xw9mgyz";
+	 var eventUrl = "http://api.jambase.com/events?zipCode="+zipcode+"&radius=10&page=0&api_key=93teh35b47s5xs9mt2aaqj8k";
 	$.getJSON(eventUrl,function(eventData){
 		var allEvents = eventData['Events']; 
 		for(var i=0; i<allEvents.length; i++){
