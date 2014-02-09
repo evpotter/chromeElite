@@ -28,18 +28,4 @@ $(document).ready(function() {
     $("#background").css("background-image", "url("+image+")");
     $("#redditWidget").append('<img src="'+image+'">');
   });
-
-  //Calendar
-  $.ajax({
-    url: 'https://www.google.com/calendar/feeds/umtriangle%40gmail.com/public/basic',
-    dataType: 'xml',
-    success: parseXML
-  });
-  
-  function parseXML(xml){
-    $(xml).find('entry').each( function() {
-    $('#clock').append($(this).find('title').text() + '<br />')
-   });
-   }
-
 });

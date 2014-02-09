@@ -1,4 +1,4 @@
-angular.module('project', ['ngRoute', 'firebase'])
+angular.module('chromeElite', ['ngRoute', 'firebase'])
  
 .value('fbURL', 'https://angularjs-projects.firebaseio.com/')
  

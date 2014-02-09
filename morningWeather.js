@@ -120,13 +120,14 @@ var morningWeather = {
                 }]
             },
             tooltip: {
-                valueSuffix: 'C'
+                valueSuffix: 'F'
             },
             legend: {
                       enabled: false
             },
             series: [{
-                data: temps
+              name:"Temp",
+              data: temps
             }],
     		labels: {
               style: {
