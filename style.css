@@ -107,8 +107,21 @@ iframe {
   width:100%;
 }
 
+#events > li{
+  color:white;
+  font-family:"Roboto", sans-serif;
+  font-weight:100;
+  font-size:1.3em;
+  opacity:0.8;
+  list-style:none;
+  height:320px;
+  width:100%;
+}
+
+
+
 .parent-s{width:80%;}
-.container-s { position: relative; overflow: auto; width:100%; }
+.container-s { position: relative; overflow: auto; width:100%; height:100%;}
 .container-s li { list-style: none;  width:100%}
 .container-s ul li { float: left; }
 .container-s ul li p {align:left; color:white;}

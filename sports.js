@@ -8,7 +8,8 @@ $(window).load(function(){
   			console.log("IT WORKED!"); 
   		}
   		else{
-  			console.log("Bad Request"); 
+  			console.log("Bad Request");
+  			$('.container.s').append('<p> Could not load data...<p>'); 
   		}
   		console.log(data['feed'].length);
   		$.each( data['feed'], function( key, val ) {
@@ -18,7 +19,7 @@ $(window).load(function(){
    	    
  	 });
  		
-      $('.container-s').unslider();
+      $('#sport-container').unslider();
 
   });
 });
