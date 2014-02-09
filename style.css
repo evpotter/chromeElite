@@ -43,7 +43,6 @@ iframe {
   height: 400px;
 }
 .cnt-item {
-  border:1px solid pink;
   color: white;
   float:left;
   margin-right:20px;
@@ -79,7 +78,7 @@ iframe {
   float:right;
 }
 #clock {
-  padding-top:10%;
+  padding-top:0;
 }
 #clock h1 {
   color:white;
@@ -117,6 +116,27 @@ iframe {
   list-style:none;
   height:320px;
   width:100%;
+}
+#todoList {
+  font-size:0.8em;
+  padding-bottom:10%;
+}
+#todoList a.btn-close {
+  color:#63D1F4;
+  cursor:pointer;
+  font-size:0.7em;
+  position:relative;
+  text-decoration:none;
+}
+#todoList input[type=text] {
+  border:none;
+  padding:2px;
+}
+#todoList input[type=submit] {
+  background:none;
+  border:none;
+  color:#63D1F4;
+  text-transform:uppercase;
 }
 
 .parent-s{width:80%;}
