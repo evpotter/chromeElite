@@ -99,8 +99,14 @@ var yelpfunctionality = {
      }
   },
 
-  showFood: function(rests) {
-    console.log(rests);
+  showFood: function(data) {
+    var items = []
+    var response = JSON.parse(data.target.response)
+    console.log(response)
+    $.each( response.businesses, function( key, val ) {
+      $('.container-s > #lunch').append("<li><p><a href=\"" + val.url + "\">" + val.name + "</a></p><br/><img src=\"" + val.photo_url + "\"></li>");
+      });
+    $('#lunch-container').unslider();
   }
 };
 
