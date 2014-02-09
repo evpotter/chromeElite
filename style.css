@@ -107,6 +107,9 @@ iframe {
   font-size:1.3em;
   opacity:0.8;
 }
+#sports {
+  margin-left: -40px;
+}
 #sports > li{
   color:white;
   font-family:"Roboto", sans-serif;

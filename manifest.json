@@ -25,7 +25,7 @@
     "http://gmodules.com/*",
     "http://*/*",
     "https://*/*",
-    "geolocation"    
+    "geolocation"
   ],
   "content_security_policy": "script-src 'self' https://cdn.firebase.com https://*.firebaseio.com https://ajax.googleapis.com/; object-src 'self'",
 
