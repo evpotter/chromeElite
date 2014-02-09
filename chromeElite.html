@@ -62,7 +62,7 @@
           <ul class="unstyled">
               <li ng-repeat="todo in todos">
             <form>
-                <span class="">{{todo}}</span>
+                <span class="">{{todo.value}}</span>
                 <input type="submit" value="done" ng-click="removeTodo(this)"></input>
               </li>
             </form>

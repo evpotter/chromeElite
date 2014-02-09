@@ -5,7 +5,7 @@ function TodoWidget($scope, $firebase) {
   $scope.todos = $firebase(ref)
 
   $scope.addTodo = function() {
-    var key = "todo" + $scope.formTodoText
+    var key = $scope.formTodoText
     var child = ref.child(key)
     child.set({value:key})
     $scope.formTodoText = ""
