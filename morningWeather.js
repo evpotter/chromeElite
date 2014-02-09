@@ -2,7 +2,7 @@ var morningWeather = {
 
 	getLocation: function() {
   		if (navigator.geolocation) {
-  		  navigator.geolocation.getCurrentPosition(this.getCity,this.showError);
+  		  navigator.geolocation.getCurrentPosition(morningWeather.getCity,morningWeather.showError);
   		}
   		else{$('#weatherWidget').innerHTML="Geolocation is not supported by this browser.";}
   	},
@@ -21,16 +21,16 @@ var morningWeather = {
 	showError: function(error) {
 		switch(error.code) {
 			case error.PERMISSION_DENIED:
-				x.innerHTML="User denied the request for Geolocation."
+				$('#weatherWidget').append("User denied the request for Geolocation.");
 				break;
 			case error.POSITION_UNAVAILABLE:
-				x.innerHTML="Location information is unavailable."
+		 $('#weatherWidget').append("Location information is unavailable.");
 				break;
 			case error.TIMEOUT:
-				x.innerHTML="The request to get user location timed out."
+		 $('#weatherWidget').innerHTML="The request to get user location timed out."
 				break;
 			case error.UNKNOWN_ERROR:
-				x.innerHTML="An unknown error occurred."
+		 $('#weatherWidget').innerHTML="An unknown error occurred."
 				break;
 	   }
 	},
@@ -50,31 +50,8 @@ var morningWeather = {
 	showWeather: function(resp) {
 		var weather = JSON.parse(resp.target.responseText);
 		console.log(weather);
-		/*var weatherdiv = document.getElementById("weatherWidget");
-		var weathertable = document.createElement('table');
-		var header = document.createElement('tr');
-		var hours = document.createElement('th');
-		hours.innerHTML = "Hours";
-		header.appendChild(hours);
-		var temps = document.createElement('th');
-		temps.innerHTML = "Temps";
-		header.appendChild(temps);
-		weathertable.appendChild(header);
-		weather.hourly_forecast.forEach(function(entry) {
-			var row = document.createElement('tr');
-			var hour = document.createElement('td');
-			hour.innerHTML = entry.FCTTIME.civil;
-			row.appendChild(hour);
-			var temp = document.createElement('td');
-			temp.innerHTML = entry.temp.english;
-			row.appendChild(temp);
-			weathertable.appendChild(row);
-		});
-		weatherdiv.appendChild(weathertable);*/
-		var hours = []//'12:00 am', '1:00 am', '2:00 am', '3:00 am', '4:00 am', '5:00 am',
-                    //'6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm',
-                    //'6:00 pm', '7:00 pm', '8:00 pm', '9:00 pm', '10:00 pm', '11:00 pm'];
-		var temps = []
+		var hours = [];
+		var temps = [];
 		weather.hourly_forecast.forEach(function(entry) {
 			hours.push(entry.FCTTIME.civil);
 			temps.push(parseInt(entry.temp.english));
@@ -82,11 +59,18 @@ var morningWeather = {
 		console.log(typeof(temps[0]));
 		$('#weatherWidget').highcharts({
 			chart: {
-				type: 'area'
+				type: 'area',
+    backgroundColor: null,
+    plotBackgroundColor: null,
+    width: 900
 			},
             title: {
                 text: 'Hourly Temperatures for Day',
-                x: -20 //center
+                x: -20, //center
+                style: {
+                  color: '#fff',
+                  font: 'Roboto'
+                }
             },
             subtitle: {
                 text: 'Source: Wunderground.com',
@@ -97,7 +81,7 @@ var morningWeather = {
             },
             yAxis: {
                 title: {
-                    text: 'Temperature (°C)'
+                    text: 'Temperature (F)'
                 },
                 plotLines: [{
                     value: 0,
@@ -106,17 +90,20 @@ var morningWeather = {
                 }]
             },
             tooltip: {
-                valueSuffix: '°C'
+                valueSuffix: 'C'
             },
             legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle',
-                borderWidth: 0
+                      enabled: false
             },
             series: [{
                 data: temps
-            }]
+            }],
+    labels: {
+              style: {
+                       color:'white'
+                     }
+    }
+
         });
 	}
 };
