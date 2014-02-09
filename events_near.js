@@ -1,5 +1,6 @@
 function showJams(zipcode){
-	 var eventUrl = "http://api.jambase.com/events?zipCode="+zipcode+"&radius=10&page=0&api_key=y9mr28cepuwpzqrdxzk9huzu";
+	var keyapi = "5BAZ7QMPY2UEZNPCH5QKCCKQ";
+	 var eventUrl = "http://api.jambase.com/events?zipCode="+zipcode+"&radius=10&page=0&api_key=7epku6upd99cy4y93xw9mgyz";
 	$.getJSON(eventUrl,function(eventData){
 		console.log(eventData['Events']);
 		var allEvents = eventData['Events']; 
@@ -16,7 +17,7 @@ function showJams(zipcode){
 			{
 				var artist = artistobj[j];
 				var artistName = artist.Name;				
- 				$('#events').append("<li><p>Name: "+artistName+" \n Venue: "+venue+" \n <a href = "+ link +"> Buy Tickets Now </a></p></li>");
+ 				$('#events').append("<li><p>Name: "+artistName+"<br> Venue: "+venue+" <br>" + (link ? "<a href = " + link + "> Buy Tickets Now </a>" : "") + "</p></li>");
 			}
 		}
 	}).done(function(){
