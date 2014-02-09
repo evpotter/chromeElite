@@ -14,6 +14,7 @@
 
     <script type="text/javascript" src="onLoad.js"></script>
     <script src="todo.js"></script>
+    <script src="news.js"></script>
     <script src="evening.js"></script>  
     <script src="/js/highcharts.js"></script>
     <script src="morningWeather.js"></script>
@@ -27,9 +28,13 @@
 <body>
   <div id="background"></div>
   <div id="wrapper"> <!-- We're gonna be setting the background of this -->
-  <div id="wrapper-inner">
+    <div id="wrapper-inner">
+      <div id="header">
+        <div id="realClock" class="header-item"></div>
+        <div id="weatherWidget2" class="header-item"></div>
+      </div>
     <div id="morningCnt" class="cnt">
-      <div id="weatherWidget" class="cnt-item">
+      <div id="weatherWidget1" class="cnt-item">
       </div>
       <div id="calendarWidget" class="cnt-item">
         <h2>Calendar</h2>
@@ -39,18 +44,19 @@
       </div>
     </div>
     <div id="afternoonCnt" class="cnt">
+          <h2>Sports</h2>
       <div class='parent-s cnt-item'>
-   		<div class="container-s" id="sport-container" >
-   			<ul id="sports"></ul>
-  		</div> 
+        <div class="container-s" id="sport-container" >
+     			<ul id="sports"></ul>
+    		</div> 
 	  </div>
-      <div id="emailWidget" class="cnt-item">
-      </div>
       <div class="lunchWidget">
       </div>
     </div>
     <div id="eveningCnt" class="cnt">
       <div id="sportsWidget" class="cnt-item">
+      </div>
+      <div id="weatherWidget3" class="cnt-item">
       </div>
       <div id="nearbyEventsWidget" class="cnt-item">
       </div>
@@ -59,6 +65,8 @@
     </div>
     <div id="lateNightCnt" class="cnt">
       <div id="redditWidget" class="cnt-item">
+      </div>
+      <div id="weatherWidget3" class="cnt-item">
       </div>
       <div id="clock" class="cnt-item">
         <div ng-controller="TodoWidget" id="todoList">
@@ -76,6 +84,7 @@
           <input type="text" ng-model="formTodoText" size="30" placeholder="Item">
           <input class="btn-primary" type="submit" value="add">
         </form>
+    </div>
     </div>
       </div>
     </div> 

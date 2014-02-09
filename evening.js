@@ -11,7 +11,7 @@ $(document).ready(function() {
   if (minutes < 10)
     minutes = "0" + minutes
 
-  $('#clock').prepend('<h1>' + hours + ':' + minutes + '</h1>');
+  $('#realClock').prepend('<h1>' + hours + ':' + minutes + '</h1>');
 
 
   //Reddit

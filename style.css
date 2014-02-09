@@ -7,9 +7,15 @@ body {
   height:100%;
 }
 
-iframe {
-  background-color:none;
-  border:0;
+h2 {
+  color:#63D1F4;
+  font-family:"Roboto", sans-serif;
+  font-weight:100;
+  font-size:3em;
+  margin:0;
+  margin-left:40px;
+  padding:0;
+  opacity:0.8;
 }
 
 #background {
@@ -34,7 +40,33 @@ iframe {
   position:relative;
   margin-left:auto;
   margin-right:auto;
-  top:20%;
+  top:10%;
+}
+#header {
+  display:block;
+  height:300px;
+}
+.header-item {
+  color:white;
+  display:block;
+  font-family:'Roboto' sans-serif;
+  float:left;
+  text-transform:uppercase;
+}
+#weatherWidget2 {
+  border-left:1px solid #63D1F4;
+  margin-top:100px;
+  margin-left:20px;
+  padding-top:10px;
+  padding-left:20px;
+}
+#weatherWidget2 img {
+  float:left;
+}
+#weatherWidget2 p {
+  float:left;
+  margin:10px;
+  padding:0;
 }
 .cnt {
   height:400px;
@@ -62,8 +94,17 @@ iframe {
 .done-true {
   display: none;
 }
+#realClock h1 {
+  color:white;
+  font-family:"Roboto", sans-serif;
+  font-weight:100;
+  font-size:6em;
+  margin-bottom:0px;
+  opacity:1.0;
+  padding-left:1em;
+}
 #redditWidget {
-  padding:-top:20px;
+  padding-top:20px;
   position:relative;
   text-align:right;
 }
@@ -111,9 +152,9 @@ iframe {
   opacity:0.8;
 }
 #sports {
-  margin-left: -40px;
+  margin-left:-20px;
 }
-#sports > li{
+#sports, #news > li{
   color:white;
   font-family:"Roboto", sans-serif;
   font-weight:100;
@@ -121,11 +162,10 @@ iframe {
   opacity:0.8;
   list-style:none;
   height:320px;
-  width:100%;
 }
 #todoList {
   font-size:0.8em;
-  padding-bottom:10%;
+  padding-top:20px;
 }
 #todoList a.btn-close {
   color:#63D1F4;
@@ -173,8 +213,7 @@ iframe {
   opacity:0.8;
 }
 
-.parent-s{width:80%;}
-.container-s { position: relative; overflow: auto; width:100%; }
-.container-s li { list-style: none;  width:100%}
+.container-s { position: relative; overflow: hidden;width:600px;}
+.container-s li { list-style: none;  width:500px;}
 .container-s ul li { float: left; }
-.container-s ul li p {align:left; color:white;}
+.container-s ul li p {text-align:left; color:white;}

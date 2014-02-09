@@ -6,7 +6,6 @@ $(document).ready(function() {
   $("#afternoonCnt").hide();
   $("#eveningCnt").hide();
   $("#lateNightCnt").hide();
-
   if (hour > 4 && hour < 12) {
     $("#morningCnt").fadeIn("slow");
   } else if (hour >= 12 && hour < 17) {
