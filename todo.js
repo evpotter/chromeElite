@@ -12,10 +12,10 @@ function TodoWidget($scope, $firebase) {
   }
 
   $scope.removeTodo = function(obj) {
-    var todo = ref.child(obj.todo.value)
-    console.log(todo)
+    var todoString = obj.todo.value
+    console.log(todoString)
+    var todo = ref.child(todoString)
     todo.remove();
-    console.log($scope.todos)
     $scope.formTodoText = ""
   }
 }
