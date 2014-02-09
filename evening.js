@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $('#redditWidget').hide();
   $('#clock').hide();
+  $('#background').hide();
   
   //Clock  
   var currentTime = new Date()
@@ -10,7 +11,7 @@ $(document).ready(function() {
   if (minutes < 10)
     minutes = "0" + minutes
 
-  $('#clock').prepend('<h1>' + hours + ':' + minutes + '</h1>');
+  $('#realClock').prepend('<h1>' + hours + ':' + minutes + '</h1>');
 
 
   //Reddit
@@ -26,6 +27,24 @@ $(document).ready(function() {
     $('#redditWidget').fadeIn("slow");
     $('#clock').fadeIn("slow");
     $("#background").css("background-image", "url("+image+")");
+    $('#background').fadeIn('slow');
     $("#redditWidget").append('<img src="'+image+'">');
   });
+
+  //Calendar
+   $.ajax({
+     url: 'https://www.google.com/calendar/feeds/indian__en%40holiday.calendar.google.com/public/basic?max-results=5&orderby=starttime&sortorder=ascending&futureevents=true',
+    dataType: 'xml',
+    success: parseXML
+  });
+  
+  function parseXML(xml){
+    $(xml).find('entry').each( function() {
+      var summary =  $(this).find('summary').text();
+      var title =  $(this).find('title').text();
+      $('#calendarWidget').append('<h4>'+title + '</h4><h5>' + summary.substring(10,21)+ '</h5><br />');
+
+   });
+   }
+
 });

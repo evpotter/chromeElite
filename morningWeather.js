@@ -141,7 +141,7 @@ var morningWeather = {
 	showAfternoonWeather: function(resp) {
 		var weather = JSON.parse(resp.target.responseText);
 		console.log(weather);
-		var temp = (weather.forecast.simpleforecast.forecastday[0].high.fahrenheit + "/" + weather.forecast.simpleforecast.forecastday[0].low.fahrenheit);
+		var temp = (weather.forecast.simpleforecast.forecastday[0].high.fahrenheit + "&#186;F / " + weather.forecast.simpleforecast.forecastday[0].low.fahrenheit) + " &#186;C" ;
 		var forecast = weather.forecast.simpleforecast.forecastday[0].icon;
 		var img = weather.forecast.simpleforecast.forecastday[0].icon_url;
 		$('#weatherWidget2').append('<img src="'+ img + '">');
