@@ -171,6 +171,10 @@ iframe {
 #sports > li {
   height: 240px;
 }
+
+#sports2 > li {
+   height:240px;
+}
 #news > li{
   height: 120px;
 }
@@ -180,7 +184,7 @@ iframe {
 #movies {
   margin-left: -40px;
 }
-#sports, #news, #movies, #lunch > li{
+#sports, #news, #movies, #lunch, #sports2 > li{
   color:white;
   font-family:"Roboto", sans-serif;
   font-weight:100;

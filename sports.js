@@ -9,10 +9,12 @@ $(window).load(function(){
   			console.log("Bad Request");
   			$('.container.s').append('<p> Could not load data...<p>'); 
   		}
-  		console.log(data['feed'].length);
   		$.each( data['feed'], function( key, val ) {
    	    $('.container-s > #sports').append("<li><p> " + val.description+ "</p></li>");
+   	    $('.container-s > #sports2').append("<li><p> " + val.description+ "</p></li>");
  	    });
     $('#sport-container').unslider();
+    $('#sport-container2').unslider();
+   
   });
 })
