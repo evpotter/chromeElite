@@ -1,17 +1,30 @@
 var yelpfunctionality = {
 
   getLocation: function() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(yelpfunctionality.makeCall,yelpfunctionality.showError);
-      }
-      else{$('#lunchWidget').innerHTML="Geolocation is not supported by this browser.";}
-    },
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(yelpfunctionality.makeCall,yelpfunctionality.showError);
+    }
+    else{$('#lunchWidget').innerHTML="Geolocation is not supported by this browser.";}
+  },
 
   makeCall: function(loc) {
 
     console.log(loc);
 
-    var auth = { 
+    var lat = loc.coords.latitude;
+    lat = lat.toFixed(5);
+
+    var lon = loc.coords.longitude;
+    lon = lon.toFixed(5);
+
+    var url = "http://api.yelp.com/business_review_search?term=food&lat=" + String(lat) + "&long="+ String(lon) + "&radius=10&limit=5&ywsid=U9jNwgdwQVgCv3nCiZ6Img";
+    console.log(url);
+    var req = new XMLHttpRequest();
+    req.open('GET', url, true);
+    req.onload = yelpfunctionality.showFood.bind(req.responseText);
+    req.send(null);
+
+    /*var auth = { 
       //
       // Update with your auth tokens.
       //
@@ -27,7 +40,7 @@ var yelpfunctionality = {
     };
 
     var terms = 'food';
-    var near = (String(loc.coords.latitude) + "," + String(loc.coords.longitude));
+    //var near = (String(loc.coords.latitude) + "," + String(loc.coords.longitude));
 
     var accessor = {
       consumerSecret: auth.consumerSecret,
@@ -37,7 +50,8 @@ var yelpfunctionality = {
     parameters = [];
     parameters.push(['term', terms]);
     parameters.push(['sort', '1']);
-    parameters.push(['ll', near]);
+    parameters.push(['lat', loc.coords.latitude]);
+    parameters.push(['long', loc.coords.longitude]);
     parameters.push(['callback', 'cb']);
     parameters.push(['oauth_consumer_key', auth.consumerKey]);
     parameters.push(['oauth_consumer_secret', auth.consumerSecret]);
@@ -45,7 +59,7 @@ var yelpfunctionality = {
     parameters.push(['oauth_signature_method', 'HMAC-SHA1']);
 
     var message = { 
-      'action': 'http://api.yelp.com/v2/search',
+      'action': 'http://api.yelp.com/business_review_search',
       'method': 'GET',
       'parameters': parameters 
     };
@@ -65,8 +79,7 @@ var yelpfunctionality = {
       'jsonpCallback': 'cb',
       'success': function(data, textStats, XMLHttpRequest) {
         console.log(data);
-      }
-    });
+      }*/
   },
 
   showError: function(error) {
@@ -84,6 +97,10 @@ var yelpfunctionality = {
      $('#lunchWidget').innerHTML="An unknown error occurred."
         break;
      }
+  },
+
+  showFood: function(rests) {
+    console.log(rests);
   }
 };
 
