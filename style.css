@@ -152,7 +152,7 @@ iframe {
   font-size:1.3em;
   opacity:0.8;
 }
-#sports {
+#sports, #sports2 {
   margin-left:-40px;
 }
 #lunch {
@@ -168,12 +168,8 @@ iframe {
 #lunchWidget {
   width: 60%;
 }
-#sports > li {
+#sports, #sports2 > li {
   height: 240px;
-}
-
-#sports2 > li {
-   height:240px;
 }
 #news > li{
   height: 120px;

@@ -7,7 +7,7 @@ $(document).ready(function() {
   $("#eveningCnt").hide();
   $("#lateNightCnt").hide();
   if (hour > 4 && hour < 12) {
-    $("#afternoonCnt").fadeIn("slow");
+    $("#morningCnt").fadeIn("slow");
   } else if (hour >= 12 && hour < 17) {
     $("#afternoonCnt").fadeIn("slow");
   } else if (hour >= 17 && hour < 22) {

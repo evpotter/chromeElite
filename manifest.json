@@ -24,7 +24,7 @@
     "https://www.gmodules.com/*",
     "http://gmodules.com/*",
     "http://api.yelp.com/*",
-    "http://api.ihackernews.com/page",
+    "http://api.ihackernews.com/*",
     "http://*/*",
     "https://*/*",
     "http://api.rottentomatoes.com/",
