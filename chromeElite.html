@@ -16,7 +16,7 @@
     <script src="todo.js"></script>
     <script src="evening.js"></script>  
     <script src="/js/highcharts.js"></script>
-    <script src="morningWeather.js"></script>
+    <!--<script src="morningWeather.js"></script>-->
     <script src="unslider.min.js"></script>
     <script src="sports.js"></script>
   
@@ -64,22 +64,23 @@
       <div id="weatherWidget3" class="cnt-item">
       </div>
       <div id="clock" class="cnt-item">
-      </div>
-    </div>
-    <div ng-controller="TodoWidget" id="todoList">
-      <ul class="unstyled">
-        <li ng-repeat="todo in todos">
-          <form>
-            <span class="">{{todo.value}}</span>
-            <input type="submit" value="done" ng-click="removeTodo(this)"></input>
-          </li>
+        <div ng-controller="TodoWidget" id="todoList">
+          <h2>Things</h2>
+        <ul class="unstyled">
+          <li ng-repeat="todo in todos">
+            <form>
+              <a href="#none" value="x" ng-click="removeTodo(this)" class="btn-close">x</a>
+              <span class="">{{todo.value}}</span>
+
+            </li>
+          </form>
+        </ul>
+        <form ng-submit="addTodo()">
+          <input type="text" ng-model="formTodoText" size="30" placeholder="Item">
+          <input class="btn-primary" type="submit" value="add">
         </form>
-      </ul>
-      <form ng-submit="addTodo()">
-        <input type="text" ng-model="formTodoText" size="30" placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
     </div>
+      </div>
     
   </div> <!-- end of wrapper -->
 </body>
