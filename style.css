@@ -213,6 +213,21 @@ iframe {
   opacity:0.8;
 }
 
+#events > li{
+  color:white;
+  font-family:"Roboto", sans-serif;
+  font-weight:100;
+  font-size:1.3em;
+  opacity:0.8;
+  list-style:none;
+  height:320px;
+  width:100%;
+}
+
+
+
+.parent-s{width:80%;}
+.container-s li { list-style: none;  width:100%}
 .container-s { position: relative; overflow: hidden;width:600px;}
 .container-s li { list-style: none;  width:500px;}
 .container-s ul li { float: left; }
