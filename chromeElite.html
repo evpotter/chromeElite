@@ -16,9 +16,10 @@
     <script src="todo.js"></script>
     <script src="evening.js"></script>  
     <script src="/js/highcharts.js"></script>
-    <!--<script src="morningWeather.js"></script>-->
+    <script src="morningWeather.js"></script>
     <script src="unslider.min.js"></script>
     <script src="sports.js"></script>
+    <script src="onLoad.js"></script>
   
     <!-- Google fonts -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -26,13 +27,15 @@
 <body>
   <div id="background"></div>
   <div id="wrapper"> <!-- We're gonna be setting the background of this -->
+  <div id="wrapper-inner">
     <div id="morningCnt" class="cnt">
-      <div id="calendarWidget" class="cnt-item">
-        <iframe src="calendar.html"></iframe>
-      </div>
       <div id="weatherWidget" class="cnt-item">
       </div>
+      <div id="calendarWidget" class="cnt-item">
+        <h2>Calendar</h2>
+      </div>
       <div id="newsWidget" class="cnt-item">
+        <h2>News</h2>
       </div>
     </div>
     <div id="afternoonCnt" class="cnt">
@@ -75,7 +78,7 @@
         </form>
     </div>
       </div>
-    
+    </div> 
   </div> <!-- end of wrapper -->
 </body>
 </html>
