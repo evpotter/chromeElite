@@ -13,7 +13,6 @@ $(document).ready(function() {
 
   $('#realClock').prepend('<h1>' + hours + ':' + minutes + '</h1>');
 
-
   //Reddit
   $.get("http://www.reddit.com/r/pics",function(data,status) {
     var imageDOM = $(data).find("a").filter(function() {
