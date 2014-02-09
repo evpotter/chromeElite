@@ -154,6 +154,12 @@ iframe {
 #sports {
   margin-left:-40px;
 }
+#sports > li {
+  height: 240px;
+}
+#news > li{
+  height: 120px;
+}
 #sports, #news > li{
   color:white;
   font-family:"Roboto", sans-serif;
@@ -161,7 +167,9 @@ iframe {
   font-size:1.3em;
   opacity:0.8;
   list-style:none;
-  height:120px;
+}
+li a {
+  color: white !important;
 }
 #todoList {
   font-size:0.8em;

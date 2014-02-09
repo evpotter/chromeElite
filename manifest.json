@@ -24,6 +24,7 @@
     "https://www.google.com/*",
     "https://www.gmodules.com/*",
     "http://gmodules.com/*",
+    "http://api.ihackernews.com/page",
     "http://*/*",
     "https://*/*",
     "geolocation"
