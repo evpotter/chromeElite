@@ -9,6 +9,8 @@ var yelpfunctionality = {
 
   makeCall: function(loc) {
 
+    console.log(loc);
+
     var auth = { 
       //
       // Update with your auth tokens.
@@ -43,7 +45,7 @@ var yelpfunctionality = {
     parameters.push(['oauth_signature_method', 'HMAC-SHA1']);
 
     var message = { 
-      'action': 'http://api.yelp.com/v2/search',
+      'action': 'https://api.yelp.com/v2/search',
       'method': 'GET',
       'parameters': parameters 
     };
@@ -63,8 +65,6 @@ var yelpfunctionality = {
       'jsonpCallback': 'cb',
       'success': function(data, textStats, XMLHttpRequest) {
         console.log(data);
-        var output = prettyPrint(data);
-        $("lunchWidget").append(output);
       }
     });
   },

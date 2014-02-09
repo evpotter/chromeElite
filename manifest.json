@@ -28,7 +28,7 @@
     "https://*/*",
     "geolocation"
   ],
-  "content_security_policy": "script-src 'self' https://oauth.googlecode.com https://cdn.firebase.com https://*.firebaseio.com https://ajax.googleapis.com/; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://api.yelp.com/v2/search https://oauth.googlecode.com https://cdn.firebase.com https://*.firebaseio.com https://ajax.googleapis.com/; object-src 'self'",
 
   "chrome_url_overrides" : {
     "newtab": "chromeElite.html"
