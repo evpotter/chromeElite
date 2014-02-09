@@ -59,20 +59,20 @@
       </div>
       <div id="clock" class="cnt-item">
       </div>
-      <div ng-controller="TodoWidget" id="todoList">
-        <ul class="unstyled">
-          <li ng-repeat="todo in todos">
-            <form>
-              <span class="">{{todo.value}}</span>
-              <input type="submit" value="done" ng-click="removeTodo(this)"></input>
-            </li>
-          </form>
-        </ul>
-        <form ng-submit="addTodo()">
-          <input type="text" ng-model="formTodoText" size="30" placeholder="add new todo here">
-          <input class="btn-primary" type="submit" value="add">
+    </div>
+    <div ng-controller="TodoWidget" id="todoList">
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+          <form>
+            <span class="">{{todo.value}}</span>
+            <input type="submit" value="done" ng-click="removeTodo(this)"></input>
+          </li>
         </form>
-      </div>
+      </ul>
+      <form ng-submit="addTodo()">
+        <input type="text" ng-model="formTodoText" size="30" placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
     </div>
     
   </div> <!-- end of wrapper -->
