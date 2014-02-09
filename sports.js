@@ -6,21 +6,13 @@ $(window).load(function(){
   		var items = [];
   		if(data['status'] == 'success'){
   			console.log("IT WORKED!"); 
-  		}
-  		else{
+  		} else{
   			console.log("Bad Request"); 
   		}
   		console.log(data['feed'].length);
   		$.each( data['feed'], function( key, val ) {
-   	    //items.push( "<li><p> " + val.description+ "</p></li>" );
-   	    
    	    $('.container-s > #sports').append("<li><p> " + val.description+ "</p></li>");
-   	    
- 	 });
- 		
-      $('.container-s').unslider();
-
+      });
+      $('#sport-container').unslider();
   });
 });
-	
-  

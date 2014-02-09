@@ -14,6 +14,7 @@
 
     <script type="text/javascript" src="onLoad.js"></script>
     <script src="todo.js"></script>
+    <script src="news.js"></script>
     <script src="evening.js"></script>  
     <script src="/js/highcharts.js"></script>
     <!--<script src="morningWeather.js"></script>-->
@@ -32,14 +33,18 @@
       </div>
       <div id="weatherWidget" class="cnt-item">
       </div>
-      <div id="newsWidget" class="cnt-item">
+      <div class='parent-s cnt-item'>
+        <div class="container-s" id="news-container" >
+          <ul id="news"></ul>
+        </div> 
       </div>
     </div>
     <div id="afternoonCnt" class="cnt">
       <div class='parent-s cnt-item'>
-   		<div class="container-s" id="sport-container" >
-   			<ul id="sports"></ul>
-  		</div> 
+     		<div class="container-s" id="sport-container" >
+     			<ul id="sports"></ul>
+    		</div> 
+      </div>
 	  </div>
       <div id="emailWidget" class="cnt-item">
       </div>

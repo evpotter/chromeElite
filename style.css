@@ -110,7 +110,7 @@ iframe {
 #sports {
   margin-left: -40px;
 }
-#sports > li{
+#sports, #news > li{
   color:white;
   font-family:"Roboto", sans-serif;
   font-weight:100;
