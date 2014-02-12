@@ -4,14 +4,19 @@ $(document).ready(function() {
   $('#background').hide();
   
   //Clock  
-  var currentTime = new Date()
-  var hours = currentTime.getHours()
-  var minutes = currentTime.getMinutes()
-  
-  if (minutes < 10)
-    minutes = "0" + minutes
+  function updateClock() {
+    var currentTime = new Date()
+    var hours = currentTime.getHours()
+    var minutes = currentTime.getMinutes()
 
-  $('#realClock').prepend('<h1>' + hours + ':' + minutes + '</h1>');
+    if (minutes < 10)
+      minutes = "0" + minutes
+
+    $('#realClock').empty() // clear out prev
+    $('#realClock').prepend('<h1>' + hours + ':' + minutes + '</h1>');
+    setTimeout(updateClock, 3000)
+  }
+  updateClock();
 
   //Reddit
   $.get("http://www.reddit.com/r/pics",function(data,status) {
