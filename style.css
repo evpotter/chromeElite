@@ -203,6 +203,9 @@ li a {
 #todoList {
   font-size:0.8em;
   padding-top:20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 #todoList a.btn-close {
   color:#63D1F4;
